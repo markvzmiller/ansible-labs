@@ -41,6 +41,7 @@ Vagrant.configure("2") do |config|
     
       node.vm.network :private_network, ip: machine[:ip]
       node.vm.network "forwarded_port", guest: 22, host: machine[:ssh_port], id: "ssh"
+      node.vm.synced_folder ".", "C:\Users\markv\Learn\ansible-devopsjourney\ansible-labs"
 
       node.vm.provider :virtualbox do |v|
         v.customize ["modifyvm", :id, "--memory", 512]
