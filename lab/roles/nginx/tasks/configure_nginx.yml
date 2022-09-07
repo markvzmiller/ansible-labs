@@ -1,8 +1,13 @@
 - name: Deploy nginx sites configuration
-  template: src=mysite.j2 dest="/etc/nginx/sites-enabled/mysite"
+  template:  src=mysites.j2 dest="/etc/nginx/sites-enabled/mysite"
+#the one line above is the same as:
+# template:
+#   src:  mysites.j2
+#   dest:  "/etc/nginx/sites-enabled/mysite"
+#so use whichever is your 
   notify: restart nginx
   tags: configuration
 
 - name: Remove defaults
   file: path="/etc/nginx/sites-enabled/default" state=absent
-  tags: configuration
+  tags: configuration    
