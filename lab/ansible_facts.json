@@ -1,4 +1,4 @@
-loadbalancer | SUCCESS => {
+"loadbalancer" | SUCCESS => {
     "ansible_facts": {
         "ansible_all_ipv4_addresses": [
             "10.0.2.15", 
